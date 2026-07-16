@@ -105,7 +105,7 @@ public class MoodWidgetProvider extends AppWidgetProvider {
             connection.setConnectTimeout(12000);
             connection.setReadTimeout(12000);
             connection.setDoOutput(true);
-            connection.setRequestProperty("Authorization", "Bearer " + MoodStore.token(context));
+            connection.setRequestProperty("OAI-Sites-Authorization", "Bearer " + MoodStore.token(context));
             connection.setRequestProperty("Content-Type", "application/json; charset=utf-8");
             byte[] payload = ("{\"mood\":\"" + mood + "\",\"intensity\":5,\"source\":\"android-widget\"}")
                     .getBytes(StandardCharsets.UTF_8);
