@@ -5,6 +5,9 @@ on:
     branches: ["main"]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -18,8 +21,22 @@ jobs:
         with:
           gradle-version: "8.10.2"
       - run: gradle assembleDebug --no-daemon
+      - name: Prepare install package
+        run: cp app/build/outputs/apk/debug/app-debug.apk mood-link.apk
       - uses: actions/upload-artifact@v4
         with:
           name: mood-link-apk
           path: app/build/outputs/apk/debug/app-debug.apk
           if-no-files-found: error
+      - name: Publish stable download link
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view latest >/dev/null 2>&1; then
+            gh release upload latest mood-link.apk --clobber
+          else
+            gh release create latest mood-link.apk \
+              --target "$GITHUB_SHA" \
+              --title "心情连线最新版" \
+              --notes "Android 桌面小组件安装包。"
+          fi
