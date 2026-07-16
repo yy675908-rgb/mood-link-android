@@ -4,4 +4,4 @@
 
 ## Build
 
-The included GitHub Actions workflow builds a debug-signed APK on the `mood-link-android` branch with Gradle 8.10.2 and Java 17.
+The included GitHub Actions workflow builds a debug-signed APK on the `main` branch with Gradle 8.10.2 and Java 17.

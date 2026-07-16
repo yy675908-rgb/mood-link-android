@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 final class MoodStore {
+    private static final String DEFAULT_SERVER_URL = "https://mood-link.yy675908.chatgpt.site";
     private static final String PREFS = "mood_link";
     private static final String SERVER_URL = "server_url";
     private static final String DEVICE_TOKEN = "device_token";
@@ -16,7 +17,7 @@ final class MoodStore {
     }
 
     static String serverUrl(Context context) {
-        return prefs(context).getString(SERVER_URL, "");
+        return prefs(context).getString(SERVER_URL, DEFAULT_SERVER_URL);
     }
 
     static String token(Context context) {
@@ -24,7 +25,7 @@ final class MoodStore {
     }
 
     static boolean isConfigured(Context context) {
-        return !serverUrl(context).isBlank() && !token(context).isBlank();
+        return !serverUrl(context).trim().isEmpty() && !token(context).trim().isEmpty();
     }
 
     static void saveConnection(Context context, String serverUrl, String token) {
