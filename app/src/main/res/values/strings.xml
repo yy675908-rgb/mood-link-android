@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">心情连线</string>
+    <string name="widget_description">从桌面一键同步此刻心情</string>
+</resources>

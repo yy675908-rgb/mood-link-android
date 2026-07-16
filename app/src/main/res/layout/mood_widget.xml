@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="心情连线"
+            android:textColor="@color/ink"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/widget_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="点一下就好"
+            android:textColor="@color/muted"
+            android:textSize="11sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button android:id="@+id/mood_calm" style="@style/MoodWidgetButton" android:text="○ 平静" />
+        <Button android:id="@+id/mood_happy" style="@style/MoodWidgetButton" android:text="✦ 开心" />
+        <Button android:id="@+id/mood_tired" style="@style/MoodWidgetButton" android:text="▱ 疲惫" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="6dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <Button android:id="@+id/mood_irritable" style="@style/MoodWidgetButton" android:text="≋ 烦躁" />
+        <Button android:id="@+id/mood_sad" style="@style/MoodWidgetButton" android:text="⌁ 难过" />
+        <Button android:id="@+id/mood_company" style="@style/MoodWidgetButton" android:text="◌ 想被陪" />
+    </LinearLayout>
+</LinearLayout>
