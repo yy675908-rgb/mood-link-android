@@ -29,7 +29,7 @@ public class MainActivity extends Activity {
         root.setBackgroundColor(Color.rgb(255, 248, 245));
 
         TextView title = new TextView(this);
-        title.setText("心情连线");
+        title.setText("Mood");
         title.setTextColor(Color.rgb(53, 42, 41));
         title.setTextSize(32);
         title.setGravity(Gravity.CENTER_HORIZONTAL);
@@ -83,7 +83,7 @@ public class MainActivity extends Activity {
         root.addView(save, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, dp(56)));
 
         TextView help = new TextView(this);
-        help.setText("然后长按手机桌面 → 小组件 → 心情连线，把它拖到桌面。");
+        help.setText("然后长按手机桌面 → 小组件 → Mood，把它拖到桌面。");
         help.setTextColor(Color.rgb(138, 119, 116));
         help.setTextSize(14);
         help.setGravity(Gravity.CENTER_HORIZONTAL);

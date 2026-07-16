@@ -73,7 +73,7 @@ public class MoodWidgetProvider extends AppWidgetProvider {
         if (!ACTION_SEND_MOOD.equals(intent.getAction())) return;
 
         if (!MoodStore.isConfigured(context)) {
-            Toast.makeText(context, "先打开一次“心情连线”完成配对", Toast.LENGTH_LONG).show();
+            Toast.makeText(context, "先打开一次“Mood”完成配对", Toast.LENGTH_LONG).show();
             Intent setup = new Intent(context, MainActivity.class);
             setup.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(setup);
